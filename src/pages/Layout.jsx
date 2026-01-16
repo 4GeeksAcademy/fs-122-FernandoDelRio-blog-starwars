@@ -1,14 +1,17 @@
 import { Outlet, Link } from "react-router-dom";
+import { Navbar } from "../components/Navbar";
+import { Footer } from "../components/Footer";
 
 export const Layout = () => {
   return (
-    <div style={{ padding: "20px" }}>
-      <nav style={{ marginBottom: "20px" }}>
-        <Link to="/" style={{ marginRight: "10px" }}>Lista de Contactos</Link>
-        <Link to="/create">Crear Contacto</Link>
-      </nav>
-      
-      <Outlet />
+    <div className="d-flex flex-column min-vh-100">
+      <Navbar />
+
+      <main className="flex-grow-1 container mt-4">
+        <Outlet />
+      </main>
+
+      <Footer />
     </div>
   );
 };
